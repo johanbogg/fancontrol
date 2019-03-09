@@ -33,8 +33,9 @@ int settingsChanged = 0;
 float tempSensor1;
 float tempSensor2;
 int displayMode=0;
+int newfanMode;
 
-char version[] = "0.1.20190304";
+char version[] = "0.1.20190308";
 char *fanGfx[] = {"- - -","* - -","* * -","* * *"};
 char *Modes[] = {"Summer","Winter","Manual"};
 // Set up Pins for Relays

@@ -6,7 +6,7 @@ void setFanSpeed(int reqSpeed) {
     digitalWrite(LOW_SPDPIN, LOW); 
     digitalWrite(MID_SPDPIN, LOW); 
     digitalWrite(HIGH_SPDPIN, LOW);
-    delay(480);
+    delay(250);
     if (reqSpeed == 0) { }
   else if (reqSpeed == 1) { digitalWrite(LOW_SPDPIN, HIGH); }
     

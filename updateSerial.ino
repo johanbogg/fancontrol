@@ -36,7 +36,7 @@ else if (displayMode == 1 ) {
   if (menuSelVal==3) { Serial.print("\n\r* Adj Period: "); }
   else { Serial.print("\n\rAdj Period: "); }
   Serial.print(maxiterations);
-  Serial.print("\n\r sec");
+  Serial.print(" sec");
   
   if (menuSelVal==4 && settingsChanged == 1) { Serial.print("\n\r* Save"); }
   else if (menuSelVal != 4 && settingsChanged == 1) { Serial.print("\n\rSave "); }

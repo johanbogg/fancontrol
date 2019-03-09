@@ -27,10 +27,11 @@ void chkBtns() {
    if (upBtnstate == HIGH && dwnBtnstate == LOW && dwnBtnstate == LOW) {
 
     if (displayMode == 0 && heatMode == 2) {
-if (olddwnBtnstate == 1) {}
+if (oldupBtnstate == 1) {}
       else {
-      if ( fanMode <= 2 ) { fanMode++; setFanSpeed(fanMode); }
-      olddwnBtnstate = 1;
+      newfanMode=fanMode;
+      if ( fanMode <= 2 ) { newfanMode++; setFanSpeed(newfanMode);}
+      oldupBtnstate = 1;
       }
       }
    if (displayMode == 1) {
@@ -54,7 +55,6 @@ if (olddwnBtnstate == 1) {}
       settingsChanged=1;
       }
       else if (menuSelVal==4 && settingsChanged == 1) {
-      Serial.print("SAVING");
       SaveSettings();
       }
       else if (menuSelVal==5) {
@@ -71,7 +71,8 @@ if (olddwnBtnstate == 1) {}
     if (displayMode == 0 && heatMode == 2) { 
       if (olddwnBtnstate == 1) {}
       else {
-      if ( fanMode >= 1 ) { fanMode--; setFanSpeed(fanMode); }
+      newfanMode=fanMode;
+      if ( newfanMode >= 1 ) { newfanMode--; setFanSpeed(newfanMode); }
       olddwnBtnstate = 1;
       }
       }
@@ -97,7 +98,6 @@ if (olddwnBtnstate == 1) {}
       settingsChanged=1;
       }
       else if (menuSelVal==4 && settingsChanged == 1) {
-      Serial.print("SAVING");
       SaveSettings();
       }
       else if (menuSelVal==5) {
@@ -113,7 +113,6 @@ if (olddwnBtnstate == 1) {}
     
     if (oldselBtnstate==1 && oldupBtnstate==1) { }
     else if (displayMode==0) {
-    Serial.print("ENTERING MENU!");
     displayMode=1;
     oldupBtnstate = 1;
     oldselBtnstate = 1;
@@ -128,7 +127,6 @@ if (olddwnBtnstate == 1) {}
   if (upBtnstate == HIGH && selBtnstate == LOW && dwnBtnstate == HIGH) { 
     if (olddwnBtnstate == 1 && oldupBtnstate == 1) {    }
     else if ( displayMode == 0) { 
-      Serial.print("VERSION AND AUTHOR");
       displayMode=2;
       olddwnBtnstate = 1;
       oldupBtnstate = 1;

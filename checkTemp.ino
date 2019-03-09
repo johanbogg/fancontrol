@@ -14,7 +14,7 @@ void checkTemp(float tempSensor1, float tempSensor2, float lowTemp){
  
     else { setFanSpeed(0); }
     }
-    else if ( heatMode == 0) {  // SUMMER MODE CODE HERE! 
+    else if ( heatMode == 0) { 
       if ( tempSensor1 > tempSensor2+1) {
         setFanSpeed(0);
       }
@@ -25,7 +25,7 @@ void checkTemp(float tempSensor1, float tempSensor2, float lowTemp){
         }
            
         
-      }
+      }// SUMMER MODE CODE HERE! 
      else { setFanSpeed(0); }
     }
     // Check if heatMode is manual (2)!
