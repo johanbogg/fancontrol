@@ -1,7 +1,7 @@
 void SaveSettings() {
-  EEPROM.write(LOWTMP_EEPROM, lowTemp);
-  EEPROM.write(MIDTMP_EEPROM, midTemp);
-  EEPROM.write(HIGHTMP_EEPROM, highTemp);
+  EEPROM.update(LOWTMP_EEPROM, (int)lowTemp);
+  EEPROM.update(MIDTMP_EEPROM, (int)midTemp);
+  EEPROM.update(HIGHTMP_EEPROM, (int)highTemp);
   EEPROMWritelong(MAXITER_EEPROM, maxiterations);
-  settingsChanged=0;
-  }
+  settingsChanged = 0;
+}
